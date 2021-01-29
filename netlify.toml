@@ -1,0 +1,4 @@
+[build]
+  publish = "src/out"
+  command = "yarn deploy"
+
