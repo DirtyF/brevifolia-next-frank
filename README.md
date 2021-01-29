@@ -12,7 +12,7 @@
 
 ## About
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/314f6fb1-b4a6-484a-ad3d-c26663a63bca/deploy-status)](https://app.netlify.com/sites/brevifolia-next-forestry/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/314f6fb1-b4a6-484a-ad3d-c26663a63bca/deploy-status)](https://app.netlify.com/sites/brevifolia-next-frank/deploys)
 
 Brevifolia is minimalist blog starter to get you going using [Forestry](https://forestry.io/) with [Next.js](https://nextjs.org/). Check out the demo [here](https://brevifolia-next-forestry.netlify.com).
 
@@ -71,8 +71,15 @@ You can set up a [remote admin](https://forestry.io/docs/editing/remote-admin/) 
 
 The [instant preview](https://forestry.io/docs/previews/instant-previews/) method spins up the a development server for a long-lived preview that can quickly respond to content updates. When using instant previews, your preview command should be the develop command. The development server spawned by this command should be available over port 8080, and bind to 0.0.0.0. The forestry:preview command in this project's package.json will launch a dev server compatible with Forestry's instant previews.
 
-## Deploy Options
+## Deploy 
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/kendallstrautman/brevifolia-next-forestry)
+Import your repository on [Netlify](https://www.netlify.com/) to automatically build this site. 
+A [Netlify config file](./netlify.toml) is provided with default build settings.
 
-[Netlify](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/) is a great way to easily deploy sites. There's no special setup you need to do with Forestry to deploy with Netlify. When Forestry makes commits to your repo, Netlify will auto-trigger a rebuild / deploy when new commits are made.
+```toml
+[build]
+  publish = "src/out"
+  command = "yarn deploy"
+```
+
+When Forestry makes commits to your repo, Netlify will auto-trigger a rebuild / deploy when new commits are made.
